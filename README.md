@@ -29,4 +29,4 @@ To develope the application the following design decision has been made:
 
 ## Acknowledgement:
 
-The work is realized  as part of a project co-funded by the National Center for Research and Development (POIR.01.01.01-00-0982/16).
+The code has been cloned from [MakoLab/NBlockchain](https://github.com/MakoLab/NBlockchain) as my contribution to a project co-funded by the National Center for Research and Development (POIR.01.01.01-00-0982/16). Further development is planned but the project will be kept as standalone.
