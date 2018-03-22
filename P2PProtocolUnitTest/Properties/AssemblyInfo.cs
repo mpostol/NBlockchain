@@ -5,9 +5,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("P2PProtocol UnitTest Project")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Makolab")]
+[assembly: AssemblyCompany("Mariusz Postol")]
 [assembly: AssemblyProduct("P2PProtocolUnitTest")]
-[assembly: AssemblyCopyright("Copyright ©  Makolab 2018")]
+[assembly: AssemblyCopyright("Copyright ©  Mariusz Postol 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

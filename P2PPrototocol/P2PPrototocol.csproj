@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>NBlockchain.P2PPrototocol</AssemblyName>
     <RootNamespace>NBlockchain.P2PPrototocol</RootNamespace>
-    <Company>Makolab</Company>
+    <Company></Company>
     <Authors>Mariusz Postol</Authors>
   </PropertyGroup>
 
