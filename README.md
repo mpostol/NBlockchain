@@ -30,3 +30,8 @@ To develope the application the following design decision has been made:
 ## Acknowledgement:
 
 The code has been cloned from [MakoLab/NBlockchain](https://github.com/MakoLab/NBlockchain) as my contribution to a project co-funded by the National Center for Research and Development (POIR.01.01.01-00-0982/16). Further development is planned but the project will be kept as standalone.
+
+## Support on Beerpay
+Hey dude! Help me out for a couple of :beers:!
+
+[![Beerpay](https://beerpay.io/mpostol/NBlockchain/badge.svg?style=beer-square)](https://beerpay.io/mpostol/NBlockchain)  [![Beerpay](https://beerpay.io/mpostol/NBlockchain/make-wish.svg?style=flat-square)](https://beerpay.io/mpostol/NBlockchain?focus=wish)
