@@ -18,12 +18,13 @@ namespace NBlockchain.P2PPrototocol.UnitTest.NodeJSAPI
     public async Task ClientConstructorTestMethod()
     {
       Uri _serverURI = new Uri("http://localhost:8004/ws/");
-      Task _server = RunWebSocketServerWriter(_serverURI);
+      Uri _clientURI = new Uri("ws://localhost:8004/ws/");
+      Task _server = RunPassiveWebSocketServer(_serverURI);
       WebSocketConnection _connection = null;
       bool _onClose = false;
       List<string> _Log = new List<string>();
       await Task.Delay(100);
-      await WebSocketClient.Connect(new Uri("ws://localhost:8004/ws/"), x => _connection = x, message => _Log.Add(message));
+      await WebSocketClient.Connect(_clientURI, x => _connection = x, message => _Log.Add(message));
       Assert.AreEqual<int>(1, _Log.Count);
       Assert.IsNotNull(_connection);
       bool _onError = false;
@@ -60,6 +61,7 @@ namespace NBlockchain.P2PPrototocol.UnitTest.NodeJSAPI
       Assert.AreEqual<TaskStatus>(TaskStatus.RanToCompletion, _server.Status);
       Assert.IsFalse(_onError);
       Assert.AreEqual<int>(11, _messages.Count);
+      Assert.AreEqual<string>("Loop counter 9", _messages[10]);
     }
 
     #region instrumentation
@@ -93,14 +95,14 @@ namespace NBlockchain.P2PPrototocol.UnitTest.NodeJSAPI
         return;
       }
       HttpListenerWebSocketContext _context= await _hc.AcceptWebSocketAsync(null);
-      WebSocket ws = _context.WebSocket;
+      WebSocket _ws = _context.WebSocket;
       await Task.Delay(100);
       for (int i = 0; i != 10; ++i)
       {
         string time = $"Loop counter {i}";
-        await ws.SendAsync(time.GetArraySegment(), WebSocketMessageType.Text, true, CancellationToken.None);
+        await _ws.SendAsync(time.GetArraySegment(), WebSocketMessageType.Text, true, CancellationToken.None);
       }
-      await ws.CloseAsync(WebSocketCloseStatus.NormalClosure, "Done", CancellationToken.None);
+      await _ws.CloseAsync(WebSocketCloseStatus.NormalClosure, "Done", CancellationToken.None);
     }
     #endregion
 

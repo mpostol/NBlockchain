@@ -19,7 +19,7 @@ namespace NBlockchain.P2PPrototocol.Network
 
     #region API
     /// <summary>
-    /// Craetes instance of CommunicationEngine
+    /// Creates instance of CommunicationEngine
     /// </summary>
     internal CommunicationEngine(IRepositoryNetwork repository, int webSocketP2pPort, Action<string> log)
     {
@@ -35,7 +35,7 @@ namespace NBlockchain.P2PPrototocol.Network
     }
     public async Task InitP2PServerAsync()
     {
-      Log($"listening websocket p2p port on: {m_WebSocketP2pPort}");
+      Log($"listening web-socket p2p port on: {m_WebSocketP2pPort}");
       await WebSocketServer.Server(m_WebSocketP2pPort, async _ws => await InitConnectionAsync(_ws));
     }
     #endregion
